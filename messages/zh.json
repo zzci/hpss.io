@@ -1,0 +1,17 @@
+{
+  "index": {
+    "title": "HPS-Admin",
+    "desc": "HPS-Admin description",
+    "log": {
+      "title": "Next-Admin 进程规划"
+    }
+  },
+  "global": {
+    "dashboard": "数据大盘",
+    "user": "用户"
+  },
+  "404": {
+    "tip": "next-admin: 您访问的页面不存在",
+    "goBack": "返回首页"
+  }
+}

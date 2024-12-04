@@ -1,0 +1,17 @@
+{
+  "index": {
+    "title": "HPS-Admin",
+    "desc": "HPS-Admin description",
+    "log": {
+      "title": "Next-Admin process planning"
+    }
+  },
+  "global": {
+    "dashboard": "Dashboard",
+    "user": "User"
+  },
+  "404": {
+    "tip": "next-admin: The page you are visiting does not exist",
+    "goBack": "go back"
+  }
+}
