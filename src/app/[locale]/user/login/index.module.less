@@ -1,69 +1,87 @@
 .loginWrap {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    .leftBanner {
-        padding: 20px;
-        width: 40%;
-        min-width: 400px;
-        background-color: #001529;
-        .logo {
-            display: inline-block;
-            height: 46px;
-            font-weight: bold;
-            font-size: 14px;
-            background-color: #1d1c1c;
-            padding: 2px 12px;
-            color: #fff;
-            line-height: 44px;
-            border-radius: 6px;
-        }
-        h2 {
-            padding-top: 100px;
-            text-align: center;
-        }
-        .banner {
-            margin-top: 80px;
-            text-align: center;
-            img {
-                width: 72%;
-            }
-        }
-    }
-    
-    .content {
-        padding: 20px;
-        background-color: #fff;
-        width: 70%;
-        .innerContent {
-            margin: 160px 0 0 20%;
-            h1 {
-                padding-bottom: 60px;
-            }
-            .form {
-                margin-top: 20px;
-            }
-            .codeWrap {
-                position: relative;
-                .codeBtn {
-                    position: absolute;
-                    right: 0;
-                    top: 6px;
-                }
-            }
-        }
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  .leftBanner {
+    padding: 20px;
+    width: 40%;
+    min-width: 400px;
+    background-color: #001529;
+    position: relative;
+
+    h2 {
+      padding-top: 100px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 16px;
     }
 
-    @media screen and (max-width: 600px) {
-        /* CSS rules */
-        .leftBanner {
-            display: none;
-        }
-        .content {
-            width: 100%;
-            .innerContent {
-                margin-left: 10px;
-            }
-        }
+    .banner {
+      margin-top: 80px;
+      text-align: center;
+      img {
+        width: 72%;
+        max-width: 360px;
+      }
     }
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .innerContent {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 20px;
+
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #1a1a1a;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .loginButtons {
+        :global {
+          .ant-btn {
+            font-size: 16px;
+
+            &:hover {
+              background: #4096ff !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .leftBanner {
+      display: none;
+    }
+
+    .content {
+      width: 100%;
+      padding: 20px;
+
+      .innerContent {
+        margin: 0 auto;
+        padding: 0 16px;
+
+        h1 {
+          font-size: 20px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
 }

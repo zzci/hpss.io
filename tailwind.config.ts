@@ -1,18 +1,35 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./src/**/*.{tsx,css}'],
   theme: {
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+      mono: [
+        'Monaco',
+        'ui-monospace',
+        'SFMono-Regular',
+        'Menlo',
+        'Consolas',
+        'Liberation Mono',
+        'Courier New',
+        'monospace',
+      ],
+    },
+    container: {
+      center: true,
+      screens: {
+        sm: '50rem',
+      },
+    },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        slate: {
+          850: 'hsl(222deg 47% 16%)',
+        },
+        primary: '#5fc3e7',
       },
     },
   },
   plugins: [],
-} satisfies Config;
+} satisfies Config

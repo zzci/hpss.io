@@ -1,26 +1,40 @@
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
+/* eslint-disable @typescript-eslint/no-floating-promises */
+'use client'
 
-// 验证token的函数
-async function validateToken(token: string) {
-  try {
-    // 这里添加你的token验证逻辑
-    // 例如：调用验证API或解析JWT
-    return true
-  } catch (error) {
-    return false
-  }
-}
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { getToken, setToken } from '@/utils'
+import { message } from 'antd'
 
-export default async function Home() {
-  const cookieStore = cookies()
-  const token = cookieStore.get('token')
+export default function Home({ params: { locale } }: { params: { locale: string } }) {
+  const router = useRouter()
 
-  if (token?.value && await validateToken(token.value)) {
-    redirect('/dashboard')
-  } else {
-    redirect('/user/login')
-  }
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const token = params.get('token')
+    const error = params.get('error')
+
+    if (error) {
+      message.error(decodeURIComponent(error))
+      router.replace(`/${locale}/user/login`)
+      return
+    }
+
+    if (token) {
+      setToken(token)
+      message.success('登录成功')
+      router.replace(`/${locale}/dashboard`)
+      return
+    }
+
+    // 检查现有 token
+    const existingToken = getToken()
+    if (existingToken) {
+      router.replace(`/${locale}/dashboard`)
+    } else {
+      router.replace(`/${locale}/user/login`)
+    }
+  }, [locale, router])
 
   return null
 }

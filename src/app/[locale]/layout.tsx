@@ -1,7 +1,9 @@
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { AntdRegistry } from '@ant-design/nextjs-registry'
-import { getTranslations } from 'next-intl/server'
+import { NextIntlClientProvider, useMessages } from 'next-intl'
+import { setRequestLocale, getTranslations } from 'next-intl/server'
+import { notFound } from 'next/navigation'
+import { routing } from '@/i18n/routing'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -11,9 +13,11 @@ interface Props {
   params: { locale: string }
 }
 
-export async function generateMetadata({
-  params: { locale },
-}: Omit<Props, 'children'>): Promise<Metadata> {
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}
+
+export async function generateMetadata({ params: { locale } }: Omit<Props, 'children'>) {
   const t = await getTranslations({ locale, namespace: 'index' })
 
   return {
@@ -23,12 +27,26 @@ export async function generateMetadata({
   }
 }
 
-export default function BasicLayout({ children, params: { locale } }: Readonly<Props>) {
+export default function LocaleLayout({ children, params: { locale } }: Readonly<Props>) {
+  // Ensure that the incoming `locale` is valid
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+  if (!routing.locales.includes(locale as any)) {
+    notFound()
+  }
+
+  // Enable static rendering
+  setRequestLocale(locale)
+
+  // Receive messages provided in `i18n.ts`
+  const messages = useMessages()
+
   return (
     <html lang={locale}>
       <head></head>
       <body className={inter.className}>
-        <AntdRegistry>{children}</AntdRegistry>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <AntdRegistry>{children}</AntdRegistry>
+        </NextIntlClientProvider>
       </body>
     </html>
   )

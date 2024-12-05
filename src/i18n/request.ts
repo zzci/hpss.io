@@ -1,26 +1,29 @@
-import { headers } from 'next/headers'
-import { notFound } from 'next/navigation'
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 import { getRequestConfig } from 'next-intl/server'
-import { locales } from '../navigation'
+import { routing } from './routing'
 
-export default getRequestConfig(async ({ locale }) => {
-  // Validate that the incoming `locale` parameter is valid
-  if (!locales.includes(locale as any)) notFound()
+export default getRequestConfig(async ({ requestLocale }) => {
+  // This typically corresponds to the `[locale]` segment
+  let locale = await requestLocale
 
-  const now = headers().get('x-now')
-  const timeZone = headers().get('x-time-zone') ?? 'Europe/Vienna'
-  
+  // Ensure that the incoming `locale` is valid
+  if (!locale || !routing.locales.includes(locale as any)) {
+    locale = routing.defaultLocale
+  }
+
   // Import messages for the current locale
   const messages = (await import(`../../messages/${locale}.json`)).default
 
   return {
-    now: now ? new Date(now) : undefined,
-    timeZone,
+    locale,
     messages,
-    defaultTranslationValues: {
-      globalString: 'Global string',
-      highlight: (chunks) => <strong>{chunks}</strong>,
-    },
+    // defaultTranslationValues: {
+    //   globalString: 'Global string',
+    //   highlight: (chunks) => <strong>{chunks}</strong>,
+    // },
     formats: {
       dateTime: {
         medium: {

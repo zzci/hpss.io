@@ -1,3 +1,7 @@
+/* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 'use client'
 import React, { useState, useEffect } from 'react'
 import {
@@ -10,12 +14,13 @@ import {
   type MenuProps,
 } from 'antd'
 import getNavList from './menu'
+import LocaleSwitcher from '../LocaleSwitcher'
 import { useRouter } from 'next/navigation'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import { MoonOutlined, SunOutlined } from '@ant-design/icons'
 import { getThemeBg } from '@/utils'
-import { Link, usePathname } from '../../navigation'
 import styles from './index.module.less'
+import { Link } from '@/i18n/routing'
 
 const { Header, Content, Footer, Sider } = Layout
 
@@ -62,12 +67,8 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
   } = theme.useToken()
 
   const t = useTranslations('global')
-
-  const locale = useLocale()
-  const otherLocale: any = locale === 'en' ? ['zh', '中'] : ['en', 'En']
-
   const router = useRouter()
-  const pathname = usePathname()
+  // const pathname = usePathname()
   const navList = getNavList(t)
 
   const [curTheme, setCurTheme] = useState<boolean>(false)
@@ -104,9 +105,13 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
           onBreakpoint={(broken) => {}}
           onCollapse={(collapsed, type) => {}}
         >
-          <span className={styles.logo} style={getThemeBg(curTheme)}>
+          {/* <span className={styles.logo} style={getThemeBg(curTheme)}>
             Next-Admin
-          </span>
+          </span> */}
+
+          <Link href='/' className={styles.logo} style={getThemeBg(curTheme)}>
+            Next-Admin
+          </Link>
           <Menu
             theme={curTheme ? 'dark' : 'light'}
             mode='inline'
@@ -119,14 +124,7 @@ const CommonLayout: React.FC<IProps> = ({ children, curActive, defaultOpen = ['/
         <Layout>
           <Header style={{ padding: 0, ...getThemeBg(curTheme), display: 'flex' }}>
             <div className={styles.rightControl}>
-              <Link
-                href={pathname as any}
-                locale={otherLocale[0]}
-                className={styles.i18n}
-                style={{ color: colorTextBase }}
-              >
-                {otherLocale[1]}
-              </Link>
+              <LocaleSwitcher />
               <span onClick={toggleTheme} className={styles.theme}>
                 {!curTheme ? (
                   <SunOutlined style={{ color: colorWarningText }} />

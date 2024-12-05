@@ -1,154 +1,66 @@
-'use client'
-import { useTranslations } from 'next-intl'
-import { Button, Form, Input, Segmented, type FormProps } from 'antd'
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { loginApi, registerApi } from './api'
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-floating-promises */
 
+'use client'
+
+import { useLocale } from 'next-intl'
+import { Button, message } from 'antd'
 import styles from './index.module.less'
 
-interface FieldType {
-  email?: string
-  pwd?: string
-  code?: string
-  remember?: string
-}
+export default function Login() {
+  const locale = useLocale()
+  // const handleSSOLogin = () => {
+  //   const ssoUrl = process.env.NEXT_PUBLIC_SSO_URL
+  //   if (!ssoUrl) {
+  //     message.error('SSO misconfiguration')
+  //     return
+  //   }
 
-const mode = ['登录', '注册']
+  //   // 构造回调 URL 到根路径
+  //   const redirectUri = encodeURIComponent(`${window.location.origin}/${locale}`)
 
-export default function Home() {
-  const t = useTranslations()
-  const [curMode, setCurMode] = useState(mode[0])
-  const [form] = Form.useForm()
-  const router = useRouter()
+  //   // 跳转到 SSO 登录页
+  //   window.location.href = `${ssoUrl}?redirect_uri=${redirectUri}`
+  // }
 
-  const onFinish: FormProps<FieldType>['onFinish'] = (values: any) => {
-    if (curMode === mode[0]) {
-      const { email, pwd } = values
-      loginApi(email, pwd).then((res) => {
-        // login logic
-        router.push('/dashboard')
-      })
+  const handleSSOLogin = () => {
+    const ssoUrl = process.env.NEXT_PUBLIC_SSO_URL
+    if (!ssoUrl) {
+      message.error('SSO misconfiguration')
       return
     }
+    // 构造模拟 SSO 地址
+    const mockSSOUrl = `/${locale}/user/callback`
 
-    if (curMode === mode[1]) {
-      const { email, pwd } = values
-      registerApi(email, pwd).then((res) => {
-        // register logic
-        router.push('/dashboard')
-      })
-    }
+    // 构造应用回调地址
+    const redirectUri = encodeURIComponent(`${window.location.origin}/${locale}`)
+
+    // 跳转到模拟的 SSO 页面
+    window.location.href = `${mockSSOUrl}?redirect_uri=${redirectUri}`
   }
 
   return (
     <main className={styles.loginWrap}>
       <div className={styles.leftBanner}>
-        <span className={styles.logo}>HPS 运营后台</span>
-        <h2>HPS 运营后台</h2>
-        <div style={{ textAlign: 'center' }}>
+        <h2 style={{ color: '#fff' }}>HPS 运营后台</h2>
+        <div style={{ textAlign: 'center', color: '#fff' }}>
           专业 • 高效 • 安全 • 便捷
         </div>
+
         <div className={styles.banner}>
-          <img src='/logo_bg.svg' alt='' />
+          <img src='/logo_bg.svg' alt='HPS Logo' />
         </div>
       </div>
       <div className={styles.content}>
         <div className={styles.innerContent}>
           <h1>欢迎登录 HPS 运营后台管理系统</h1>
-          <Segmented<string>
-            options={mode}
-            size='large'
-            onChange={(value) => {
-              setCurMode(value)
-              form.resetFields()
-            }}
-          />
-          <Form
-            name='basic'
-            className={styles.form}
-            wrapperCol={{ span: 24 }}
-            style={{ maxWidth: 420 }}
-            form={form}
-            onFinish={onFinish}
-            initialValues={{
-              email: 'dooring@next.com',
-              pwd: 'dooring.vip',
-            }}
-            autoComplete='off'
-          >
-            {curMode === mode[0] ? (
-              <>
-                <Form.Item<FieldType>
-                  name='email'
-                  rules={[
-                    {
-                      type: 'email',
-                      message: '邮箱不合法!',
-                    },
-                    {
-                      required: true,
-                      message: '请输入邮箱',
-                    },
-                  ]}
-                >
-                  <Input placeholder='请输入邮箱' size='large' variant='filled' />
-                </Form.Item>
 
-                <Form.Item<FieldType>
-                  name='pwd'
-                  rules={[{ required: true, message: '请输入密码' }]}
-                >
-                  <Input.Password
-                    size='large'
-                    placeholder='请输入密码'
-                    variant='filled'
-                  />
-                </Form.Item>
-
-                <Form.Item wrapperCol={{ span: 24 }}>
-                  <Button type='primary' htmlType='submit' block size='large'>
-                    登录
-                  </Button>
-                </Form.Item>
-              </>
-            ) : (
-              <>
-                <Form.Item<FieldType>
-                  name='email'
-                  rules={[
-                    {
-                      type: 'email',
-                      message: '邮箱不合法!',
-                    },
-                    {
-                      required: true,
-                      message: '请输入邮箱',
-                    },
-                  ]}
-                >
-                  <Input placeholder='请输入邮箱' size='large' variant='filled' />
-                </Form.Item>
-
-                <Form.Item<FieldType>
-                  name='pwd'
-                  rules={[{ required: true, message: '请输入密码' }]}
-                >
-                  <Input.Password
-                    size='large'
-                    placeholder='请输入密码'
-                    variant='filled'
-                  />
-                </Form.Item>
-
-                <Form.Item wrapperCol={{ span: 24 }}>
-                  <Button type='primary' htmlType='submit' block size='large'>
-                    注册
-                  </Button>
-                </Form.Item>
-              </>
-            )}
-          </Form>
+          <div className={styles.loginButtons} style={{ maxWidth: 420, width: '100%' }}>
+            <Button type='primary' block size='large' onClick={handleSSOLogin}>
+              HPS SSO Login
+            </Button>
+          </div>
         </div>
       </div>
     </main>
