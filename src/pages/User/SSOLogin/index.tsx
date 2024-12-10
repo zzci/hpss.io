@@ -1,10 +1,7 @@
 import { Helmet, history, SelectLang, useIntl } from '@umijs/max';
 import { createStyles } from 'antd-style';
 import { message } from 'antd';
-import {
-  LoginFormPage,
-  LoginForm,
-} from "@ant-design/pro-components";
+import { LoginForm } from "@ant-design/pro-components";
 import React from 'react';
 import Settings from '../../../../config/defaultSettings';
 
@@ -53,7 +50,6 @@ const Lang = () => {
   );
 };
 
-
 const SSOLogin: React.FC = () => {
   const { styles } = useStyles();
   const intl = useIntl();
@@ -61,19 +57,17 @@ const SSOLogin: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleSubmit = async (values: any) => {
     try {
-      /**
-       * env UMI_APP_PUBLIC_SSO_URL
-       */
       if (!UMI_APP_PUBLIC_SSO_URL) {
-        message.error('SSO misconfiguration')
-        return
+        const ssoErrorMessage = intl.formatMessage({
+          id: 'pages.login.sso.error',
+          defaultMessage: 'SSO 配置错误',
+        });
+        message.error(ssoErrorMessage);
+        return;
       }
-  
-      // 构造应用回调地址
-      const redirectUri = encodeURIComponent(window.location.origin)
-  
-      // 跳转到模拟的 SSO 页面
-      history.push(`${UMI_APP_PUBLIC_SSO_URL}?redirect=${redirectUri}`)
+
+      const redirectUri = encodeURIComponent(window.location.origin);
+      history.push(`${UMI_APP_PUBLIC_SSO_URL}?redirect=${redirectUri}`);
     } catch (error) {
       const defaultLoginFailureMessage = intl.formatMessage({
         id: 'pages.login.failure',
@@ -89,7 +83,7 @@ const SSOLogin: React.FC = () => {
       <Helmet>
         <title>
           {intl.formatMessage({
-            id: 'menu.login',
+            id: 'page.sso.login',
             defaultMessage: 'SSO 登录页',
           })}
           {Settings.title && ` - ${Settings.title}`}
@@ -98,17 +92,22 @@ const SSOLogin: React.FC = () => {
       <Lang />
       <LoginForm
         // backgroundImageUrl="https://mdn.alipayobjects.com/huamei_gcee1x/afts/img/A*y0ZTS6WLwvgAAAAAAAAAAAAADml6AQ/fmt.webp"
-        logo="https://github.githubassets.com/favicons/favicon.png"
+        logo="/logo.svg"
         // backgroundVideoUrl="https://gw.alipayobjects.com/v/huamei_gcee1x/afts/video/jXRBRK_VAwoAAAAAAAAAAAAAK4eUAQBr"
-        title="HPS 运营后台"
-        // containerStyle={{
-        //   backgroundColor: "rgba(91, 95, 105, 0.65)",
-        //   backdropFilter: "blur(4px)",
-        // }}
-        subTitle="欢迎登录 HPS 运营后台管理系统"
+        title={intl.formatMessage({
+          id: 'pages.sso.title',
+          defaultMessage: 'HPS 运营后台',
+        })}
+        subTitle={intl.formatMessage({
+          id: 'pages.sso.subtitle',
+          defaultMessage: '欢迎登录 HPS 运营后台管理系统',
+        })}
         submitter={{
           searchConfig: {
-            submitText: "HPS SSO Login",
+            submitText: intl.formatMessage({
+              id: 'pages.sso.submit',
+              defaultMessage: 'HPS SSO Login',
+            }),
           },
         }}
         onFinish={async (values) => {

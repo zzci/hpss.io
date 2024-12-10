@@ -169,4 +169,5 @@ export default defineConfig({
     UMI_APP_PUBLIC_SSO_URL: process.env.UMI_APP_PUBLIC_SSO_URL,
   },
   devtool: process.env.NODE_ENV === 'development' ? 'eval' : false,
+  favicons: ['/logo.svg']
 });
