@@ -14,6 +14,9 @@ importers:
       '@ant-design/pro-components':
         specifier: ^2.7.19
         version: 2.8.2(antd@5.22.3(date-fns@2.30.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@logto/react':
+        specifier: ^4.0.3
+        version: 4.0.3(react@18.3.1)
       antd:
         specifier: ^5.21.2
         version: 5.22.3(date-fns@2.30.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -80,7 +83,7 @@ importers:
         version: 4.3.36(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(stylelint@13.13.1)(typescript@5.7.2)
       '@umijs/max':
         specifier: ^4.3.24
-        version: 4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react-dom@18.3.2)(@types/react@18.3.14)(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)
+        version: 4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react-dom@18.3.2)(@types/react@18.3.14)(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -113,7 +116,7 @@ importers:
         version: 5.7.2
       umi-presets-pro:
         specifier: ^2.0.3
-        version: 2.0.3(@babel/core@7.4.5)(@types/react-dom@18.3.2)(@types/react@18.3.14)(antd@5.22.3(date-fns@2.30.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(chokidar@3.6.0)(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(encoding@0.1.13)(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)(umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1))
+        version: 2.0.3(@babel/core@7.4.5)(@types/react-dom@18.3.2)(@types/react@18.3.14)(antd@5.22.3(date-fns@2.30.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(chokidar@3.6.0)(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(encoding@0.1.13)(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)(umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1))
       umi-serve:
         specifier: ^1.9.11
         version: 1.9.11(@babel/core@7.4.5)
@@ -1877,6 +1880,20 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
 
+  '@logto/browser@3.0.3':
+    resolution: {integrity: sha512-NSElaGgigoyefQ0xnHKmcT0t0O3ZWSkQGYZIm4Vpe7R+NEhGgYY/FHJms0uwO5Y2k894UMGyktG6prTKYVdAmg==}
+
+  '@logto/client@3.0.3':
+    resolution: {integrity: sha512-L5tTKX/1Uv3vVvECcJkhWIfhHG6R9Wf/ZAWUJ+PbhyJSkJGZ4/uEvAoKAXew1PvZGYJUsoUWDNl5lE92bSD8LA==}
+
+  '@logto/js@5.0.2':
+    resolution: {integrity: sha512-kZXVwX9+84I3yw7q7i9uN9PbDkTnFWwf6KcpAhkjmx4FmBA40M8eZCHwASqrIuuhXz0z1s9l9KEpbkoo8+VGEg==}
+
+  '@logto/react@4.0.3':
+    resolution: {integrity: sha512-1hw1m2TuY1BiCMLGQlPjgGXfTEg3QdM3hmp2IwSG4qXi2ftArtnTTbG5Q+XTkguYf+6kQCQmEwdMZfVFl5SY7w==}
+    peerDependencies:
+      react: '>=16.8.0'
+
   '@napi-rs/nice-android-arm-eabi@1.0.1':
     resolution: {integrity: sha512-5qpvOu5IGwDo7MEKVqqyAxF90I6aLj4n07OzpARdgDRfz8UbBztTByBp0RC59r3J1Ij8uzYi6jI7r5Lws7nn6w==}
     engines: {node: '>= 10'}
@@ -2197,6 +2214,10 @@ packages:
   '@sigstore/tuf@1.0.3':
     resolution: {integrity: sha512-2bRovzs0nJZFlCN3rXirE4gwxCn97JNjMmwpecqlbgV9WcxX7WRuIrgzx/X7Ib7MYRbyUTpBYE0s2x6AmZXnlg==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+
+  '@silverhand/essentials@2.9.2':
+    resolution: {integrity: sha512-bD+82D9Dfa1F5xX1kfdR5ODIoJS41NOxTuHx4shVS5A4/ayEG+ZplpDDjB19fsa7kZXgSgD75R4sUCXjm88x6w==}
+    engines: {node: ^18.12.0 || ^20.9.0 || ^22.0.0, pnpm: ^9.0.0}
 
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
@@ -3615,6 +3636,10 @@ packages:
     resolution: {integrity: sha512-YrwaA0vEKazPBkn0ipTiMpSajYDSe+KjQfrjhcBMxJt/znbvlHd8Pw/Vamaz5EB4Wfhs3SUR3Z9mwRu/P3s3Yg==}
     engines: {node: '>=8'}
 
+  camelcase-keys@9.1.3:
+    resolution: {integrity: sha512-Rircqi9ch8AnZscQcsA1C47NFdaO3wukpmIRzYcDOrmvgt78hM/sj5pZhZNec2NM12uk5vTwRHZ4anGcrC4ZTg==}
+    engines: {node: '>=16'}
+
   camelcase@5.3.1:
     resolution: {integrity: sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==}
     engines: {node: '>=6'}
@@ -3622,6 +3647,10 @@ packages:
   camelcase@6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
+
+  camelcase@8.0.0:
+    resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
+    engines: {node: '>=16'}
 
   camelize@1.0.1:
     resolution: {integrity: sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==}
@@ -6209,6 +6238,12 @@ packages:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
 
+  jose@5.9.6:
+    resolution: {integrity: sha512-AMlnetc9+CV9asI19zHmrgS/WYsWUwCn2R7RzlbJWD7F9eWYUTGyBmU9o6PxngtLGOiDGPRu+Uc4fhKzbpteZQ==}
+
+  js-base64@3.7.7:
+    resolution: {integrity: sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw==}
+
   js-cookie@3.0.5:
     resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
     engines: {node: '>=14'}
@@ -6623,6 +6658,10 @@ packages:
   map-obj@4.3.0:
     resolution: {integrity: sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==}
     engines: {node: '>=8'}
+
+  map-obj@5.0.0:
+    resolution: {integrity: sha512-2L3MIgJynYrZ3TYMriLDLWocz15okFakV6J12HXvMXDHui2x/zgChzg1u9mFFGbbGWE+GsLpQByt4POb9Or+uA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   marked-terminal@3.2.0:
     resolution: {integrity: sha512-Yr1yVS0BbDG55vx7be1D0mdv+jGs9AW563o/Tt/7FTsId2J0yqhrTeXAqq/Q0DyyXltIn6CSxzesQuFqXgafjQ==}
@@ -8041,6 +8080,10 @@ packages:
   quick-lru@4.0.1:
     resolution: {integrity: sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==}
     engines: {node: '>=8'}
+
+  quick-lru@6.1.2:
+    resolution: {integrity: sha512-AAFUA5O1d83pIHEhJwWCq/RQcRukCkn/NSm2QsTEMle5f2hP0ChI2+3Xb051PZCkLryI/Ir1MVKviT2FIloaTQ==}
+    engines: {node: '>=12'}
 
   raf@3.4.1:
     resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
@@ -9862,6 +9905,10 @@ packages:
   type-fest@0.8.1:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
+
+  type-fest@4.30.0:
+    resolution: {integrity: sha512-G6zXWS1dLj6eagy6sVhOMQiLtJdxQBHIA9Z6HFUNLOlr6MFOgzV8wvmidtPONfPtEUv0uZsy77XJNzTAfwPDaA==}
+    engines: {node: '>=16'}
 
   type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
@@ -13384,6 +13431,30 @@ snapshots:
       react: 18.3.1
       react-is: 16.13.1
 
+  '@logto/browser@3.0.3':
+    dependencies:
+      '@logto/client': 3.0.3
+      '@silverhand/essentials': 2.9.2
+      js-base64: 3.7.7
+
+  '@logto/client@3.0.3':
+    dependencies:
+      '@logto/js': 5.0.2
+      '@silverhand/essentials': 2.9.2
+      camelcase-keys: 9.1.3
+      jose: 5.9.6
+
+  '@logto/js@5.0.2':
+    dependencies:
+      '@silverhand/essentials': 2.9.2
+      camelcase-keys: 9.1.3
+
+  '@logto/react@4.0.3(react@18.3.1)':
+    dependencies:
+      '@logto/browser': 3.0.3
+      '@silverhand/essentials': 2.9.2
+      react: 18.3.1
+
   '@napi-rs/nice-android-arm-eabi@1.0.1':
     optional: true
 
@@ -13807,6 +13878,8 @@ snapshots:
       tuf-js: 1.1.7
     transitivePeerDependencies:
       - supports-color
+
+  '@silverhand/essentials@2.9.2': {}
 
   '@sinclair/typebox@0.27.8': {}
 
@@ -14587,7 +14660,7 @@ snapshots:
       - supports-color
       - terser
 
-  '@umijs/bundler-webpack@4.3.36(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)':
+  '@umijs/bundler-webpack@4.3.36(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)':
     dependencies:
       '@svgr/core': 6.5.1
       '@svgr/plugin-jsx': 6.5.1(@svgr/core@6.5.1)
@@ -14597,7 +14670,7 @@ snapshots:
       '@umijs/bundler-utils': 4.3.36
       '@umijs/case-sensitive-paths-webpack-plugin': 1.0.1
       '@umijs/mfsu': 4.3.36
-      '@umijs/react-refresh-webpack-plugin': 0.5.11(react-refresh@0.14.0)(type-fest@0.21.3)(webpack@5.97.1)
+      '@umijs/react-refresh-webpack-plugin': 0.5.11(react-refresh@0.14.0)(type-fest@4.30.0)(webpack@5.97.1)
       '@umijs/utils': 4.3.36
       cors: 2.8.5
       css-loader: 6.7.1(webpack@5.97.1)
@@ -14828,14 +14901,14 @@ snapshots:
       - supports-color
       - typescript
 
-  '@umijs/max@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react-dom@18.3.2)(@types/react@18.3.14)(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)':
+  '@umijs/max@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react-dom@18.3.2)(@types/react@18.3.14)(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)':
     dependencies:
       '@umijs/lint': 4.3.36(eslint@8.35.0)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(stylelint@14.8.2)(typescript@5.7.2)
       '@umijs/plugins': 4.3.36(@babel/core@7.4.5)(@types/react-dom@18.3.2)(@types/react@18.3.14)(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       antd: 4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       eslint: 8.35.0
       stylelint: 14.8.2
-      umi: 4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.35.0)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@14.8.2)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)
+      umi: 4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.35.0)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@14.8.2)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)
     transitivePeerDependencies:
       - '@babel/core'
       - '@types/node'
@@ -15044,7 +15117,7 @@ snapshots:
       - react-native
       - supports-color
 
-  '@umijs/preset-umi@4.3.36(@types/node@22.10.1)(@types/react@18.3.14)(lightningcss@1.22.1)(rollup@3.29.5)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)':
+  '@umijs/preset-umi@4.3.36(@types/node@22.10.1)(@types/react@18.3.14)(lightningcss@1.22.1)(rollup@3.29.5)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)':
     dependencies:
       '@iconify/utils': 2.1.1
       '@svgr/core': 6.5.1
@@ -15054,7 +15127,7 @@ snapshots:
       '@umijs/bundler-mako': 0.9.8
       '@umijs/bundler-utils': 4.3.36
       '@umijs/bundler-vite': 4.3.36(@types/node@22.10.1)(lightningcss@1.22.1)(postcss@8.4.49)(rollup@3.29.5)(sugarss@2.0.0)(terser@5.37.0)
-      '@umijs/bundler-webpack': 4.3.36(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)
+      '@umijs/bundler-webpack': 4.3.36(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)
       '@umijs/core': 4.3.36
       '@umijs/did-you-know': 1.0.3
       '@umijs/es-module-parser': 0.0.7
@@ -15102,7 +15175,7 @@ snapshots:
       - webpack-hot-middleware
       - webpack-plugin-serve
 
-  '@umijs/react-refresh-webpack-plugin@0.5.11(react-refresh@0.14.0)(type-fest@0.21.3)(webpack@5.97.1)':
+  '@umijs/react-refresh-webpack-plugin@0.5.11(react-refresh@0.14.0)(type-fest@4.30.0)(webpack@5.97.1)':
     dependencies:
       ansi-html-community: 0.0.8
       common-path-prefix: 3.0.0
@@ -15116,7 +15189,7 @@ snapshots:
       source-map: 0.7.4
       webpack: 5.97.1
     optionalDependencies:
-      type-fest: 0.21.3
+      type-fest: 4.30.0
 
   '@umijs/renderer-react@4.3.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -15128,13 +15201,13 @@ snapshots:
       react-helmet-async: 1.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-router-dom: 6.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
-  '@umijs/request-record@1.1.4(umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1))':
+  '@umijs/request-record@1.1.4(umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1))':
     dependencies:
       chokidar: 3.6.0
       express: 4.21.2
       lodash: 4.17.21
       prettier: 2.8.8
-      umi: 4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)
+      umi: 4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -16300,9 +16373,18 @@ snapshots:
       map-obj: 4.3.0
       quick-lru: 4.0.1
 
+  camelcase-keys@9.1.3:
+    dependencies:
+      camelcase: 8.0.0
+      map-obj: 5.0.0
+      quick-lru: 6.1.2
+      type-fest: 4.30.0
+
   camelcase@5.3.1: {}
 
   camelcase@6.3.0: {}
+
+  camelcase@8.0.0: {}
 
   camelize@1.0.1: {}
 
@@ -19574,6 +19656,10 @@ snapshots:
 
   jiti@1.21.6: {}
 
+  jose@5.9.6: {}
+
+  js-base64@3.7.7: {}
+
   js-cookie@3.0.5: {}
 
   js-levenshtein@1.1.6: {}
@@ -20022,6 +20108,8 @@ snapshots:
   map-obj@1.0.1: {}
 
   map-obj@4.3.0: {}
+
+  map-obj@5.0.0: {}
 
   marked-terminal@3.2.0(marked@0.6.2):
     dependencies:
@@ -21619,6 +21707,8 @@ snapshots:
   quick-format-unescaped@4.0.4: {}
 
   quick-lru@4.0.1: {}
+
+  quick-lru@6.1.2: {}
 
   raf@3.4.1:
     dependencies:
@@ -24005,6 +24095,8 @@ snapshots:
 
   type-fest@0.8.1: {}
 
+  type-fest@4.30.0: {}
+
   type-is@1.6.18:
     dependencies:
       media-typer: 0.3.0
@@ -24087,12 +24179,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  umi-presets-pro@2.0.3(@babel/core@7.4.5)(@types/react-dom@18.3.2)(@types/react@18.3.14)(antd@5.22.3(date-fns@2.30.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(chokidar@3.6.0)(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(encoding@0.1.13)(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)(umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)):
+  umi-presets-pro@2.0.3(@babel/core@7.4.5)(@types/react-dom@18.3.2)(@types/react@18.3.14)(antd@5.22.3(date-fns@2.30.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(chokidar@3.6.0)(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(encoding@0.1.13)(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.2)(umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)):
     dependencies:
       '@alita/plugins': 3.5.4(@babel/core@7.4.5)(@types/react-dom@18.3.2)(@types/react@18.3.14)(antd@5.22.3(date-fns@2.30.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@umijs/max-plugin-openapi': 2.0.3(chokidar@3.6.0)(encoding@0.1.13)(typescript@5.7.2)
       '@umijs/plugins': 4.3.36(@babel/core@7.4.5)(@types/react-dom@18.3.2)(@types/react@18.3.14)(antd@5.22.3(date-fns@2.30.0)(moment@2.30.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(dva@2.5.0-beta.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(rc-field-form@2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@umijs/request-record': 1.1.4(umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1))
+      '@umijs/request-record': 1.1.4(umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1))
       swagger-ui-dist: 4.19.1
     transitivePeerDependencies:
       - '@babel/core'
@@ -24146,14 +24238,14 @@ snapshots:
       prettier: 1.15.3
       slash2: 2.0.0
 
-  umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.35.0)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@14.8.2)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1):
+  umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.35.0)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@14.8.2)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1):
     dependencies:
       '@babel/runtime': 7.23.6
       '@umijs/bundler-utils': 4.3.36
-      '@umijs/bundler-webpack': 4.3.36(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)
+      '@umijs/bundler-webpack': 4.3.36(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)
       '@umijs/core': 4.3.36
       '@umijs/lint': 4.3.36(eslint@8.35.0)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(stylelint@14.8.2)(typescript@5.7.2)
-      '@umijs/preset-umi': 4.3.36(@types/node@22.10.1)(@types/react@18.3.14)(lightningcss@1.22.1)(rollup@3.29.5)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)
+      '@umijs/preset-umi': 4.3.36(@types/node@22.10.1)(@types/react@18.3.14)(lightningcss@1.22.1)(rollup@3.29.5)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)
       '@umijs/renderer-react': 4.3.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@umijs/server': 4.3.36
       '@umijs/test': 4.3.36(@babel/core@7.4.5)
@@ -24193,14 +24285,14 @@ snapshots:
       - webpack-hot-middleware
       - webpack-plugin-serve
 
-  umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1):
+  umi@4.3.36(@babel/core@7.4.5)(@types/node@22.10.1)(@types/react@18.3.14)(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(lightningcss@1.22.1)(prettier@3.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@3.29.5)(stylelint@13.13.1)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1):
     dependencies:
       '@babel/runtime': 7.23.6
       '@umijs/bundler-utils': 4.3.36
-      '@umijs/bundler-webpack': 4.3.36(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)
+      '@umijs/bundler-webpack': 4.3.36(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)
       '@umijs/core': 4.3.36
       '@umijs/lint': 4.3.36(eslint@8.57.1)(jest@29.7.0(@types/node@22.10.1)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@types/node@22.10.1)(typescript@5.7.2)))(stylelint@13.13.1)(typescript@5.7.2)
-      '@umijs/preset-umi': 4.3.36(@types/node@22.10.1)(@types/react@18.3.14)(lightningcss@1.22.1)(rollup@3.29.5)(sugarss@2.0.0)(terser@5.37.0)(type-fest@0.21.3)(typescript@5.7.2)(webpack@5.97.1)
+      '@umijs/preset-umi': 4.3.36(@types/node@22.10.1)(@types/react@18.3.14)(lightningcss@1.22.1)(rollup@3.29.5)(sugarss@2.0.0)(terser@5.37.0)(type-fest@4.30.0)(typescript@5.7.2)(webpack@5.97.1)
       '@umijs/renderer-react': 4.3.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@umijs/server': 4.3.36
       '@umijs/test': 4.3.36(@babel/core@7.4.5)

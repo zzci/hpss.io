@@ -25,12 +25,13 @@ export default [
         path: '/user/ssoLogin',
         component: './User/SSOLogin',
       },
-      {
-        name: 'callback',
-        path: '/user/callback',
-        component: './User/Callback',
-      },
     ],
+  },
+  {
+    path: '/callback',
+    name: 'callback',
+    layout: false,
+    component: './Callback',
   },
   {
     path: '/welcome',
@@ -55,12 +56,12 @@ export default [
       },
     ],
   },
-  {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
-  },
+  // {
+  //   name: 'list.table-list',
+  //   icon: 'table',
+  //   path: '/list',
+  //   component: './TableList',
+  // },
   {
     path: '/',
     redirect: '/welcome',

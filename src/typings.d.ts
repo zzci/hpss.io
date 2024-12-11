@@ -20,6 +20,11 @@ declare module 'bizcharts-plugin-slider';
 declare const REACT_APP_ENV: 'test' | 'dev' | 'pre' | false;
 
 /**
- * SSO URL
+ * Register the sample app in Logto dashboard
  */
-declare const UMI_APP_PUBLIC_SSO_URL: string;
+declare const LOGTO_APP_ID: string;
+
+/**
+ * Replace with your own Logto endpoint
+ */
+declare const LOGTO_ENDPOINT: string;

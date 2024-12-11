@@ -1,9 +1,10 @@
-import { Helmet, history, SelectLang, useIntl } from '@umijs/max';
+import { Helmet, SelectLang, useIntl } from '@umijs/max';
 import { createStyles } from 'antd-style';
-import { message } from 'antd';
 import { LoginForm } from "@ant-design/pro-components";
 import React from 'react';
+import { useLogto } from '@logto/react';
 import Settings from '../../../../config/defaultSettings';
+import { AUTH_CALLBACK_URL } from '@/composables';
 
 const useStyles = createStyles(({ token }) => {
   return {
@@ -51,39 +52,16 @@ const Lang = () => {
 };
 
 const SSOLogin: React.FC = () => {
+  const { signIn } = useLogto();
   const { styles } = useStyles();
   const intl = useIntl();
-  
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleSubmit = async (values: any) => {
-    try {
-      if (!UMI_APP_PUBLIC_SSO_URL) {
-        const ssoErrorMessage = intl.formatMessage({
-          id: 'pages.login.sso.error',
-          defaultMessage: 'SSO 配置错误',
-        });
-        message.error(ssoErrorMessage);
-        return;
-      }
-
-      const redirectUri = encodeURIComponent(window.location.origin);
-      history.push(`${UMI_APP_PUBLIC_SSO_URL}?redirect=${redirectUri}`);
-    } catch (error) {
-      const defaultLoginFailureMessage = intl.formatMessage({
-        id: 'pages.login.failure',
-        defaultMessage: '登录失败，请重试！',
-      });
-      console.log(error);
-      message.error(defaultLoginFailureMessage);
-    }
-  };
 
   return (
     <div className={styles.container}>
       <Helmet>
         <title>
           {intl.formatMessage({
-            id: 'page.sso.login',
+            id: 'pages.sso.login',
             defaultMessage: 'SSO 登录页',
           })}
           {Settings.title && ` - ${Settings.title}`}
@@ -110,8 +88,8 @@ const SSOLogin: React.FC = () => {
             }),
           },
         }}
-        onFinish={async (values) => {
-          await handleSubmit(values);
+        onFinish={async () => {
+          await signIn(AUTH_CALLBACK_URL);
         }}
       >
       </LoginForm>

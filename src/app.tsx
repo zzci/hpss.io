@@ -1,5 +1,4 @@
-import { AvatarDropdown, AvatarName, Footer, Question, SelectLang } from '@/components';
-// import { currentUser as queryCurrentUser } from '@/services/ant-design-pro/api';
+import { AvatarDropdown, AvatarName, Footer, SelectLang } from '@/components';
 import { LinkOutlined } from '@ant-design/icons';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
@@ -8,57 +7,67 @@ import { history, Link } from '@umijs/max';
 import React from 'react';
 import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
-import { getToken } from '@/utils'
+import { LogtoProvider, LogtoConfig, UserScope, useLogto } from '@logto/react';
+import { LOGTO_APPLICATION_ID, LOGTO_ENDPOINT_URL } from '@/composables';
 
 const isDev = process.env.NODE_ENV === 'development';
-// const loginPath = '/user/login';
-const loginPaths = ['/user/ssoLogin', '/user/callback'];
+const loginPaths = ['/user/ssoLogin', '/user/callback', '/callback'];
 
-/**
- * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
- * */
+// 用户信息 Provider 组件
+const UserInfoProvider: React.FC<{
+  children: React.ReactNode;
+  setInitialState: (state: any) => void;
+}> = ({ children, setInitialState }) => {
+  const { isAuthenticated, fetchUserInfo } = useLogto();
+
+  React.useEffect(() => {
+    const init = async () => {
+      if (isAuthenticated) {
+        try {
+          const userInfo = await fetchUserInfo();
+          if (userInfo) {
+            setInitialState((s: any) => ({
+              ...s,
+              currentUser: {
+                name: userInfo.name || userInfo.username || userInfo.email || 'User',
+                avatar: userInfo.avatar || 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+                email: userInfo.email,
+                phone: userInfo.phone,
+              },
+            }));
+          }
+        } catch (error) {
+          console.error('Failed to fetch user info:', error);
+        }
+      }
+    };
+    init();
+  }, [isAuthenticated, fetchUserInfo, setInitialState]);
+
+  return <>{children}</>;
+};
+
+// 认证状态检查组件
+const AuthStateProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { isAuthenticated } = useLogto();
+  const { location } = history;
+  const isLoginPage = loginPaths.includes(location.pathname);
+
+  React.useEffect(() => {
+    if (!isAuthenticated && !isLoginPage) {
+      history.push(loginPaths[0]);
+    }
+  }, [isAuthenticated, isLoginPage]);
+
+  return <>{children}</>;
+};
+
 export async function getInitialState(): Promise<{
   settings?: Partial<LayoutSettings>;
   currentUser?: API.CurrentUser;
   loading?: boolean;
-  fetchUserInfo?: () => Promise<API.CurrentUser | undefined>;
 }> {
-  const fetchUserInfo = async () => {
-    try {
-      // const msg = await queryCurrentUser({
-      //   skipErrorHandler: true,
-      // });
-      // return msg.data;
-      const existingToken = getToken()
-      if (existingToken) {
-        return {
-          name: 'test',
-          avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
-        }
-      } else {
-        return undefined
-      }
-    } catch (error) {
-      history.push(loginPaths[0]); // Redirect to main SSO login path
-    }
-    return undefined;
-  };
-  
-  // Check if current path is any of the login-related paths
-  const { location } = history;
-  const isLoginPage = loginPaths.includes(location.pathname);
-  
-  if (!isLoginPage) {
-    const currentUser = await fetchUserInfo();
-    console.log("🚀 ~ getInitialState ~ currentUser:", currentUser)
-    return {
-      fetchUserInfo,
-      currentUser,
-      settings: defaultSettings as Partial<LayoutSettings>,
-    };
-  }
   return {
-    fetchUserInfo,
     settings: defaultSettings as Partial<LayoutSettings>,
   };
 }
@@ -66,7 +75,7 @@ export async function getInitialState(): Promise<{
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) => {
   return {
-    actionsRender: () => [<Question key="doc" />, <SelectLang key="SelectLang" />],
+    actionsRender: () => [<SelectLang key="SelectLang" />],
     avatarProps: {
       src: initialState?.currentUser?.avatar,
       title: <AvatarName />,
@@ -78,14 +87,6 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       content: initialState?.currentUser?.name,
     },
     footerRender: () => <Footer />,
-    onPageChange: () => {
-      const { location } = history;
-      const isLoginPage = loginPaths.includes(location.pathname);
-      // 如果没有登录，并且不在登录相关页面，重定向到主登录页
-      if (!initialState?.currentUser && !isLoginPage) {
-        history.push(loginPaths[0]);
-      }
-    },
     bgLayoutImgList: [
       {
         src: 'https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/D2LWSqNny4sAAAAAAAAAAAAAFl94AQBr',
@@ -122,7 +123,11 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       // if (initialState?.loading) return <PageLoading />;
       return (
         <>
-          {children}
+          <UserInfoProvider setInitialState={setInitialState}>
+            <AuthStateProvider>
+              {children}
+            </AuthStateProvider>
+          </UserInfoProvider>
           {isDev && (
             <SettingDrawer
               disableUrlParams
@@ -142,6 +147,39 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     ...initialState?.settings,
   };
 };
+
+// cdhj996@gmail.com
+// UVsu5fyJhzWpXud
+
+/**
+ * Root Complex
+ * 
+ * - https://umijs.org/docs/api/runtime-config#rootcontainer
+ * - https://pro-components.antdigital.dev/en-US/docs/faq#compatibility-issues-with-browsers-below-chrome-88
+ */
+const RootContainer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const config: LogtoConfig = {
+    appId: LOGTO_APPLICATION_ID,
+    endpoint: LOGTO_ENDPOINT_URL,
+    scopes: [
+      UserScope.Email,
+      UserScope.Phone,
+      UserScope.CustomData,
+      UserScope.Identities,
+      UserScope.Organizations,
+    ],
+  };
+
+  return (
+    <LogtoProvider config={config}>
+      {children}
+    </LogtoProvider>
+  );
+};
+
+export function rootContainer(container: React.ReactElement) {
+  return <RootContainer>{container}</RootContainer>;
+}
 
 /**
  * @name request 配置，可以配置错误处理

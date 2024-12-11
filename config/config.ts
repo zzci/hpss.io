@@ -165,8 +165,12 @@ export default defineConfig({
   mako: {},
   esbuildMinifyIIFE: true,
   requestRecord: {},
+  /**
+   * https://umijs.org/docs/api/config#define
+   */
   define: {
-    UMI_APP_PUBLIC_SSO_URL: process.env.UMI_APP_PUBLIC_SSO_URL,
+    LOGTO_APP_ID: process.env.LOGTO_APP_ID,
+    LOGTO_ENDPOINT: process.env.LOGTO_ENDPOINT,
   },
   devtool: process.env.NODE_ENV === 'development' ? 'eval' : false,
   favicons: ['/logo.svg']
