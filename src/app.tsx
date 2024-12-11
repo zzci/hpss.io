@@ -148,9 +148,6 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
   };
 };
 
-// cdhj996@gmail.com
-// UVsu5fyJhzWpXud
-
 /**
  * Root Complex
  * 
