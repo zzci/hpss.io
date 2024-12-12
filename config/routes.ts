@@ -16,11 +16,6 @@ export default [
     layout: false,
     routes: [
       {
-        name: 'login',
-        path: '/user/login',
-        component: './User/Login',
-      },
-      {
         name: 'ssoLogin',
         path: '/user/ssoLogin',
         component: './User/SSOLogin',
@@ -56,12 +51,6 @@ export default [
       },
     ],
   },
-  // {
-  //   name: 'list.table-list',
-  //   icon: 'table',
-  //   path: '/list',
-  //   component: './TableList',
-  // },
   {
     path: '/',
     redirect: '/welcome',

@@ -1,6 +1,6 @@
 import { Helmet, SelectLang, useIntl } from '@umijs/max';
 import { createStyles } from 'antd-style';
-import { LoginForm } from "@ant-design/pro-components";
+import { LoginForm } from '@ant-design/pro-components';
 import React from 'react';
 import { useLogto } from '@logto/react';
 import Settings from '../../../../config/defaultSettings';
@@ -91,8 +91,7 @@ const SSOLogin: React.FC = () => {
         onFinish={async () => {
           await signIn(AUTH_CALLBACK_URL);
         }}
-      >
-      </LoginForm>
+      ></LoginForm>
     </div>
   );
 };

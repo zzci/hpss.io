@@ -30,14 +30,18 @@ export default {
   'pages.welcome.link': '欢迎使用',
   'pages.welcome.alertMessage': '更快更强的重型组件，已经发布。',
   'pages.welcome.title': '欢迎使用 HPS 运营后台',
-  'pages.welcome.description': 'HPS 运营后台是一个专业的高性能服务管理平台，为企业提供全面的运维监控、性能分析和资源管理功能。通过直观的界面和强大的功能，帮助您更好地管理和优化您的服务。',
+  'pages.welcome.description':
+    'HPS 运营后台是一个专业的高性能服务管理平台，为企业提供全面的运维监控、性能分析和资源管理功能。通过直观的界面和强大的功能，帮助您更好地管理和优化您的服务。',
   'pages.welcome.learnMore': '了解更多',
   'pages.welcome.card1.title': '系统概览',
-  'pages.welcome.card1.desc': '提供系统整体运行状态、性能指标和关键数据的实时监控，帮助您快速了解系统健康状况。',
+  'pages.welcome.card1.desc':
+    '提供系统整体运行状态、性能指标和关键数据的实时监控，帮助您快速了解系统健康状况。',
   'pages.welcome.card2.title': '性能管理',
-  'pages.welcome.card2.desc': '深入分析系统性能，包括服务响应时间、资源使用率等关键指标，帮助您优化系统性能。',
+  'pages.welcome.card2.desc':
+    '深入分析系统性能，包括服务响应时间、资源使用率等关键指标，帮助您优化系统性能。',
   'pages.welcome.card3.title': '运维工具',
-  'pages.welcome.card3.desc': '提供丰富的运维工具和API接口，支持自动化运维和系统集成，提高运维效率。',
+  'pages.welcome.card3.desc':
+    '提供丰富的运维工具和API接口，支持自动化运维和系统集成，提高运维效率。',
   'pages.404.subTitle': '抱歉，您访问的页面不存在。',
   'pages.404.buttonText': '返回首页',
   'pages.admin.subPage.title': ' 这个页面只有 admin 权限才能查看',

@@ -31,14 +31,18 @@ export default {
   'pages.welcome.link': 'Welcome',
   'pages.welcome.alertMessage': 'Faster and stronger heavy-duty components have been released.',
   'pages.welcome.title': 'Welcome to HPS Admin Console',
-  'pages.welcome.description': 'The HPS Admin Console is a professional high-performance service management platform that provides comprehensive operational monitoring, performance analysis, and resource management capabilities. Through an intuitive interface and powerful features, we help you better manage and optimize your services.',
+  'pages.welcome.description':
+    'The HPS Admin Console is a professional high-performance service management platform that provides comprehensive operational monitoring, performance analysis, and resource management capabilities. Through an intuitive interface and powerful features, we help you better manage and optimize your services.',
   'pages.welcome.learnMore': 'Learn More',
   'pages.welcome.card1.title': 'System Overview',
-  'pages.welcome.card1.desc': 'Provides real-time monitoring of overall system operation status, performance metrics, and key data to help you quickly understand system health.',
+  'pages.welcome.card1.desc':
+    'Provides real-time monitoring of overall system operation status, performance metrics, and key data to help you quickly understand system health.',
   'pages.welcome.card2.title': 'Performance Management',
-  'pages.welcome.card2.desc': 'In-depth analysis of system performance, including key metrics such as service response time and resource utilization, helping you optimize system performance.',
+  'pages.welcome.card2.desc':
+    'In-depth analysis of system performance, including key metrics such as service response time and resource utilization, helping you optimize system performance.',
   'pages.welcome.card3.title': 'Operation Tools',
-  'pages.welcome.card3.desc': 'Offers rich operational tools and API interfaces, supporting automated operations and system integration to improve operational efficiency.',
+  'pages.welcome.card3.desc':
+    'Offers rich operational tools and API interfaces, supporting automated operations and system integration to improve operational efficiency.',
   'pages.404.subTitle': 'Sorry, the page you visited does not exist.',
   'pages.404.buttonText': 'Back Home',
   'pages.admin.subPage.title': 'This page can only be viewed by Admin',

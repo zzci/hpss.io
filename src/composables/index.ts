@@ -1,5 +1,3 @@
-export const baseUrl = window.location.origin;
-
 // Authentication related configurations
 export const APPLICATION_BASE_URL = window.location.origin;
 export const AUTH_CALLBACK_URL = `${APPLICATION_BASE_URL}/callback`;

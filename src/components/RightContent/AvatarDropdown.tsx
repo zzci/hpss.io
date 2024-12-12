@@ -66,7 +66,7 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
       />
     </span>
   );
-  
+
   if (!initialState || !isAuthenticated) {
     return loading;
   }

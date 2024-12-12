@@ -4,7 +4,7 @@ import { GithubOutlined } from '@ant-design/icons';
 import { DefaultFooter } from '@ant-design/pro-components';
 
 const Footer: React.FC = () => {
-  const intl = useIntl()
+  const intl = useIntl();
 
   return (
     <DefaultFooter
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
         },
         {
           year: new Date().getFullYear(),
-        }
+        },
       )}
       links={[
         {
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
         },
       ]}
     />
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

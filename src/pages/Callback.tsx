@@ -17,10 +17,10 @@ const Callback = () => {
   });
 
   return isLoading ? (
-    <Spin tip='Redirecting...' size='large'>
+    <Spin tip="Redirecting..." size="large">
       {content}
     </Spin>
-  ) : null
+  ) : null;
 };
 
 export default Callback;

@@ -173,5 +173,5 @@ export default defineConfig({
     LOGTO_ENDPOINT: process.env.LOGTO_ENDPOINT,
   },
   devtool: process.env.NODE_ENV === 'development' ? 'eval' : false,
-  favicons: ['/logo.svg']
+  favicons: ['/logo.svg'],
 });

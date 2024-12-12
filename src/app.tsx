@@ -30,7 +30,9 @@ const UserInfoProvider: React.FC<{
               ...s,
               currentUser: {
                 name: userInfo.name || userInfo.username || userInfo.email || 'User',
-                avatar: userInfo.avatar || 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+                avatar:
+                  userInfo.avatar ||
+                  'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
                 email: userInfo.email,
                 phone: userInfo.phone,
               },
@@ -124,9 +126,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       return (
         <>
           <UserInfoProvider setInitialState={setInitialState}>
-            <AuthStateProvider>
-              {children}
-            </AuthStateProvider>
+            <AuthStateProvider>{children}</AuthStateProvider>
           </UserInfoProvider>
           {isDev && (
             <SettingDrawer
@@ -150,7 +150,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
 
 /**
  * Root Complex
- * 
+ *
  * - https://umijs.org/docs/api/runtime-config#rootcontainer
  * - https://pro-components.antdigital.dev/en-US/docs/faq#compatibility-issues-with-browsers-below-chrome-88
  */
@@ -167,11 +167,7 @@ const RootContainer: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     ],
   };
 
-  return (
-    <LogtoProvider config={config}>
-      {children}
-    </LogtoProvider>
-  );
+  return <LogtoProvider config={config}>{children}</LogtoProvider>;
 };
 
 export function rootContainer(container: React.ReactElement) {

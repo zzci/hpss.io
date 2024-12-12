@@ -12,5 +12,4 @@ HPS 运营后台管理系统。
 
 ## 📝 License
 
-This is a fork
-from [Ant Design Pro](https://github.com/ant-design/ant-design-pro)
+This is a fork from [Ant Design Pro](https://github.com/ant-design/ant-design-pro)
